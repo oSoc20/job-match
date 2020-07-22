@@ -1,4 +1,9 @@
 ::variables [stylesheet]
 :root {
-    --primary-color: #E7EEF5;
+    --primary-color: #55BAEB;
+    --primary-color-dark: #273951;
+    --grey: #E7EEF5;
+
+    --font-type: Calibre Test;
+    --font-size-lg: 18px;
 }

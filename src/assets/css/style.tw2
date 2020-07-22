@@ -1,5 +1,10 @@
 ::style [stylesheet]
+body {
+    margin: 0;
+}
+
 #passage {
+    height: 100vh;
     width: 100vw;
     max-width: 100vw;
     position: relative;
@@ -9,6 +14,7 @@
     margin: 0 auto;
     max-width: 600px;
     width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -18,8 +24,55 @@
 }
 
 .container .story-container {
-    background-color: var(--primary-color);
+    background-color: var(--grey);
+    padding: 30px 20px;
+    min-height: 30%;
+
     display: flex;
     justify-content:center;
     align-items:center;
+    flex-direction: column;
+}
+
+.container .story-container .story-container__img {
+    background-color: var(--primary-color-dark);
+    background-size: cover;
+    background-position: center;
+}
+
+.container .option-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+/* option button */
+.option {
+    min-width: 172px;
+    display: flex;
+    justify-content:center;
+    margin: 15px;
+    font-size: var(--font-size-lg);
+    background-color: var(--primary-color-dark);
+    padding: 20px 20px;
+}
+.option a {
+    width: 100%;
+    font-family: Calibre Test;
+    color: var(--grey);
+
+    border: none;
+    text-align: center;
+    font-family: Calibre Test;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.option a:hover {
+    color: var(--primary-color);
 }

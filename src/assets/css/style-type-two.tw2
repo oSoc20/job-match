@@ -1,5 +1,9 @@
 ::style-type-two [stylesheet]
-.story-container__img-type-two {
+.story-container--type-two {
+    background-color: transparent !important;
+}
+
+.story-container__img--type-two {
     /*
     width: 80%;
     height: 60vw;
@@ -7,13 +11,10 @@
     */
     width: 275px;
     height: 370px;
-    margin: 20px;
-
-    background-size: cover;
-    background-position: center;
+    margin: 30px;
 }
 
 
-.story-container__img--type-two {
+.story-container__img--passage-two {
     background-image: url("https://images.unsplash.com/photo-1447710441604-5bdc41bc6517?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
 }

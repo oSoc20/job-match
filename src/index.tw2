@@ -9,17 +9,19 @@ Twee2::build_config.story_format = 'Snowman'
 
 ::StoryIncludes
 ./assets/css/style-variables.tw2
+./assets/css/style-typography.tw2
 ./assets/css/style.tw2
 ./assets/css/style-type-two.tw2
+./assets/css/style-type-three.tw2
 ./assets/script.tw2
 
 
 ::Start [haml]
-%p.option  
+.option  
     [[option one ->Type-one]]
-%p.option  
+.option  
     [[option two ->Type-two]]
-%p.option  
+.option  
     [[option three ->Type-three]]
 
 
@@ -30,40 +32,41 @@ Twee2::build_config.story_format = 'Snowman'
     <%= window.story.render("Header") %>
     .story-container
         %p.story-container__text
-            HAHAHHAHAHAHA
+            We've got a lot of interesting jobs in engineeringm traffix management, communication and of course: technicians to keep the belgian rail network going! We're always looking fo new people.
     .option-container   
-        %p.option  
+        .option  
             [[option one ->Type-one]]
-        %p.option  
+        .option  
             [[option two ->Type-two]]
-        %p.option  
+        .option  
             [[option three ->Type-three]]
 
 ::Type-two [haml]
 .container.container--type-one
     <%= window.story.render("Header") %>
-    .story-container
-        .story-container__img-type-two.story-container__img--type-two
+    .story-container.story-container--type-two
+        .story-container__img.story-container__img--type-two.story-container__img--passage-two
     .option-container   
-        %p.option  
+        .option  
             [[option one ->Type-one]]
-        %p.option  
+        .option  
             [[option two ->Type-two]]
-        %p.option  
+        .option  
             [[option three ->Type-three]]
 
 ::Type-three [haml]
 .container.container--type-one
     <%= window.story.render("Header") %>
     .story-container
-        .story-container__img-type-three.story-container__img--passage-name
+        .story-container__img.story-container__img--type-three.story-container__img--passage-three
         %p.story-question
+            Do you have a driver's license?
     .option-container   
-        %p.option  
+        .option  
             [[option one ->Type-one]]
-        %p.option  
+        .option  
             [[option one ->Type-two]]
-        %p.option  
+        .option  
             [[option one ->Type-three]]
 
 ::Header [haml]

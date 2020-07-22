@@ -61,12 +61,11 @@ body {
 }
 .option a {
     width: 100%;
-    font-family: Calibre Test;
+    font-family: var(--font-type);
     color: var(--grey);
 
     border: none;
     text-align: center;
-    font-family: Calibre Test;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;

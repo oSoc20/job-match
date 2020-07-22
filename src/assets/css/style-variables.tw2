@@ -4,6 +4,6 @@
     --primary-color-dark: #273951;
     --grey: #E7EEF5;
 
-    --font-type: Calibre Test;
+    --font-type: 'Roboto';
     --font-size-lg: 18px;
 }

@@ -15,7 +15,7 @@ Escape from Earth
     --primary-color-dark: #273951;
     --grey: #E7EEF5;
 
-    --font-type: Calibre Test;
+    --font-type: 'Roboto';
     --font-size-lg: 18px;
 }
 p {
@@ -97,12 +97,11 @@ body {
 }
 .option a {
     width: 100%;
-    font-family: Calibre Test;
+    font-family: var(--font-type);
     color: var(--grey);
 
     border: none;
     text-align: center;
-    font-family: Calibre Test;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -164,6 +163,7 @@ body {
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// enables correct responsive behaviour
     document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1">';
+    document.getElementsByTagName('head')[0].innerHTML += '<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">';
 
     const getCurrentPassageId = () => {
         return window.story.history[window.story.history.length - 1];

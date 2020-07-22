@@ -5,21 +5,15 @@
 
     window.setup = window.setup || {};
 
-    window.setup.getStoryProgressInPercentage = () => {
+    window.setup.setStoryProgressBar = () => {
         const pageId = getCurrentPassageId();
         const storyLength = window.story.passages.length;
         // const historyLength = window.story.history.length;
+        const progress = (pageId / storyLength) * 100;
+        
+        // set progress-bar width
 
-        return (pageId / storyLength) * 100;
-
-    }
-
-    window.setup.logMsg = () => {
-        const pageId = getCurrentPassageId();
-        const storyLength = window.story.passages.length;
-        // const historyLength = window.story.history.length;
-
-        return (pageId / storyLength) * 100;
+        document.getElementById('progress').style.width = `${progress}%`;
 
     }
 

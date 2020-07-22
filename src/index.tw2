@@ -1,16 +1,36 @@
 ::StoryTitle
 Escape from Earth
 
-::Start
-There are only hours left before the asteroid hits and, if the news is to be believed, all life on Earth is extinguished. The spaceship is fuelled-up and [[ready to go->Ready]], but after all the rush of the last few weeks, you don't feel like you've had a chance to say goodbye to the planet that's been your home your entire life. [[Your father->Father]] glances over to check that you're heading into the vessel as he shepherds [[the family dog->Dog]]'s out of the hangar door. Behind the barriers, [[your sister->Sister]] gives a sad wave, clutching a photo in her hand.
+::Configuration [twee2]
+Twee2::build_config.story_ifid = '51582e37-93c2-4fb0-a6f2-4102a235a389'
+Twee2::build_config.story_format = 'Snowman'
 
-::Ready
-You've still got a few seconds before you absolutely have to [[get on board->Board]], if you'd like to go and [[help your father->Father]], say goodbye to [[the family dog->Dog]], or check up on [[your sister->Sister]], who you're having to leave behind.
+::Script [script]
+    const getCurrentPassageId = () => {
+        return window.story.history[window.story.history.length - 1];
+    }
 
-::Board
-No, you decide, the time for goodbyes has passed. After your weeks of preparation for the journey through space you don't feel the need to tie yourself to Earth any more-strongly than you have to: it's already hard enough to let go. One at a time, you climb the steps into the rocket ship and find your seat. You close the blind that cover your tiny circular window and take a deep breath. Letting go isn't easy, but there's no reason you should make it harder for yourself.
+    const loopCallback = () => {
+        console.log(getCurrentPassageId())
+    }
 
-**THE END**
+    const loopInterval = window.setInterval(loopCallback, 100);
+
+::StoryIncludes
+style.tw2
+
+::Start [haml]
+%p.text
+    There are only hours left before the asteroid hits and, if the news is to be believed, all life on Earth is extinguished. The spaceship is fuelled-up and [[ready to go->Ready]], but after all the rush of the last few weeks, you don't feel like you've had a chance to say goodbye to the planet that's been your home your entire life. [[Your father->Father]] glances over to check that you're heading into the vessel as he shepherds [[the family dog->Dog]]'s out of the hangar door. Behind the barriers, [[your sister->Sister]] gives a sad wave, clutching a photo in her hand.
+
+::Ready [haml]
+    You've still got a few seconds before you absolutely have to [[get on board->Board]], if you'd like to go and [[help your father->Father]], say goodbye to [[the family dog->Dog]], or check up on [[your sister->Sister]], who you're having to leave behind.
+
+
+::Board [haml]
+    No, you decide, the time for goodbyes has passed. After your weeks of preparation for the journey through space you don't feel the need to tie yourself to Earth any more-strongly than you have to: it's already hard enough to let go. One at a time, you climb the steps into the rocket ship and find your seat. You close the blind that cover your tiny circular window and take a deep breath. Letting go isn't easy, but there's no reason you should make it harder for yourself.
+
+
 
 ::Father
 You run to help your father with the dog, trying in vain to keep your mind occupied by anything but the evacuation. Wordlessly, you walk together to the door and hand over the dog's lead to the armed guard there. For a moment, you feel bad about leaving him with a stranger, but in six hours it won't matter anyway. Looking out through the hangar door, you feel a momentary pang of jealousy for those left behind: they get to [[watch one final sunrise together->Sunrise]]... meanwhile, you and the other "lucky" ten-thousand survivors will be [[in orbit->Orbit]], weightless but still weighed-down by your grief over the billions of deaths below.
@@ -49,4 +69,6 @@ You're still locked in an embrace when the armed guard comes and separates you. 
 ::Photo
 "I wanted you to take this," your sister says, thrusting the photo into your hands. You recognise the photo: you took it at arms-reach to capture the pair of you, sitting out on the grass under a starry sky while, in the background, your father shows off a telescope to a group of onlookers. You stuff it into your pocket before the security guard arrives to shepherd you back towards the rocket ship. Weeks later, you'll frame it in your new home on Mars, and it will come to represent everything that you left behind in order to be there. But right now, all you want is one final hug before takeoff.
 
+
 **THE END**
+

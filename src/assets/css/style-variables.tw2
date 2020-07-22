@@ -1,0 +1,4 @@
+::variables [stylesheet]
+:root {
+    --primary-color: #E7EEF5;
+}

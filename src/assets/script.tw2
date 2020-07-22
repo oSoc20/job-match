@@ -1,0 +1,25 @@
+::Script [script]
+    const getCurrentPassageId = () => {
+        return window.story.history[window.story.history.length - 1];
+    }
+
+    window.setup = window.setup || {};
+
+    window.setup.getStoryProgressInPercentage = () => {
+        const pageId = getCurrentPassageId();
+        const storyLength = window.story.passages.length;
+        // const historyLength = window.story.history.length;
+
+        return (pageId / storyLength) * 100;
+
+    }
+
+    window.setup.logMsg = () => {
+        const pageId = getCurrentPassageId();
+        const storyLength = window.story.passages.length;
+        // const historyLength = window.story.history.length;
+
+        return (pageId / storyLength) * 100;
+
+    }
+

@@ -86,7 +86,7 @@ body {
     width: 100%;
 }
 
-.progress-bar #progress {
+.progress-bar .progress {
     height: 100%;
     background-color: var(--primary-color);
 }

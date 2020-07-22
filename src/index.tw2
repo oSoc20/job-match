@@ -70,8 +70,6 @@ Twee2::build_config.story_format = 'Snowman'
             [[option one ->Type-three]]
 
 ::Header [haml]
-<%= setup.setStoryProgressBar() %> 
 .header
     .progress-bar
-        #progress
-
+        <div class="progress" style="width:<%= window.setup.getStoryProgressInPercentage() %>"></div>

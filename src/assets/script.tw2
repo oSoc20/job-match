@@ -1,19 +1,17 @@
 ::Script [script]
+    // enables correct responsive behaviour
+    document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1">';
+
     const getCurrentPassageId = () => {
         return window.story.history[window.story.history.length - 1];
     }
 
     window.setup = window.setup || {};
 
-    window.setup.setStoryProgressBar = () => {
+    window.setup.getStoryProgressInPercentage = () => {
         const pageId = getCurrentPassageId();
         const storyLength = window.story.passages.length;
-        // const historyLength = window.story.history.length;
         const progress = (pageId / storyLength) * 100;
-        
-        // set progress-bar width
-
-        document.getElementById('progress').style.width = `${progress}%`;
-
+        return `${progress}%`;
     }
 

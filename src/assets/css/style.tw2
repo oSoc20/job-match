@@ -10,46 +10,8 @@ body {
     position: relative;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 600px;
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.container > * {
-    width: 100%;
-}
-
-.container .story-container {
-    background-color: var(--grey);
-    padding: 30px 20px;
-    min-height: 30%;
-
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction: column;
-}
-
-.container .story-container .story-container__img {
-    background-color: var(--primary-color-dark);
-    background-size: cover;
-    background-position: center;
-}
-
-.container .option-container {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    flex-wrap: wrap;
-}
-
 /* option button */
-.option {
+a {
     min-width: 172px;
     min-height: 54px;
     display: flex;
@@ -59,7 +21,7 @@ body {
     font-size: var(--font-size-lg);
     background-color: var(--primary-color-dark);
 }
-.option a {
+a {
     width: 100%;
     font-family: var(--font-type);
     color: var(--grey);
@@ -73,19 +35,6 @@ body {
     text-align: center;
 }
 
-.option a:hover {
+a:hover {
     color: var(--primary-color);
-}
-
-/* progress bar */
-
-.progress-bar { 
-    height: 14px;
-    background-color: var(--grey);
-    width: 100%;
-}
-
-.progress-bar .progress {
-    height: 100%;
-    background-color: var(--primary-color);
 }

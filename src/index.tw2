@@ -23,6 +23,8 @@ Twee2::build_config.story_format = 'Snowman'
     [[option two ->Type-two]]
 .option  
     [[option three ->Type-three]]
+.option
+    [[option four ->Type-four]]
 
 
     
@@ -68,6 +70,18 @@ Twee2::build_config.story_format = 'Snowman'
             [[option one ->Type-two]]
         .option  
             [[option one ->Type-three]]
+
+::Type-four
+<text-card text="Just a test">
+    <div slot="options">
+        [[option one ->Type-one]]
+        [[option one ->Type-two]]
+        [[option one ->Type-three]]
+    </div>
+
+</text-card>
+
+
 
 ::Header [haml]
 .header

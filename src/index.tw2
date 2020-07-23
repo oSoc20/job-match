@@ -73,12 +73,9 @@ Twee2::build_config.story_format = 'Snowman'
 
 ::Type-four
 <text-card text="Just a test">
-    <div slot="options">
-        [[option one ->Type-one]]
-        [[option one ->Type-two]]
-        [[option one ->Type-three]]
-    </div>
-
+    [[option one ->Type-one]]
+    [[option one ->Type-two]]
+    [[option one ->Type-three]]
 </text-card>
 
 

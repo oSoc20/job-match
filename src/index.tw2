@@ -81,7 +81,7 @@ Twee2::build_config.story_format = 'Snowman'
     [[option one ->Type-three]]
 
 ::Type-five [haml]
-%image-card{:image => "https://avatars3.githubusercontent.com/u/61460540?s=200&v=4"}
+%image-card{:image => "./images/lost-items.png"}
     [[option one ->Type-one]]
     [[option one ->Type-two]]
     [[option one ->Type-three]]

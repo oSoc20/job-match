@@ -112,6 +112,21 @@
     const imageTemplate = document.createElement('template');
 
     imageTemplate.innerHTML = `
+
+    <style>
+    .story-container--type-two {
+        background-color: transparent !important;
+    }
+
+    .story-container img {
+        width: 275px;
+        height: 370px;
+        margin: 30px;
+        object-fit: cover;
+    }
+
+    </style>
+
     <div>
         <div class="container">
             <div class="header">
@@ -149,6 +164,15 @@
     const fullTemplate = document.createElement("template");
 
     fullTemplate.innerHTML = `
+    <style>
+        .story-container img {
+            width: 275px;
+            height: 170px;
+
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
     <div>
         <div class="container">
             <div class="header">

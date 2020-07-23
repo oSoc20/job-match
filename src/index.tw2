@@ -13,66 +13,12 @@ Twee2::build_config.story_format = 'Snowman'
 ./assets/script.tw2
 ./assets/components.tw2
 
+./branches/main.tw2
 
 ::Start [haml]
-.option  
-    [[option one ->Type-one]]
-.option  
-    [[option two ->Type-two]]
-.option  
-    [[option three ->Type-three]]
-.option
-    [[option four ->Type-four]]
-.option
-    [[option five ->Type-five]]
-.option
-    [[option six ->Type-six]]
+%text-card{:text => "Start game?"}
+    [[I'm ready ->Intro-start]]
 
-
-
-    
-
-::Type-one [haml]
-.container.container--type-one
-    <%= window.story.render("Header") %>
-    .story-container
-        %p.story-container__text
-            We've got a lot of interesting jobs in engineeringm traffix management, communication and of course: technicians to keep the belgian rail network going! We're always looking fo new people.
-    .option-container   
-        .option  
-            [[option one ->Type-one]]
-        .option  
-            [[option two ->Type-two]]
-        .option  
-            [[option three ->Type-three]]
-
-::Type-two [haml]
-.container.container--type-one
-    <%= window.story.render("Header") %>
-    .story-container.story-container--type-two
-        .story-container__img.story-container__img--type-two.story-container__img--passage-two
-    .option-container   
-        .option  
-            [[option one ->Type-one]]
-        .option  
-            [[option two ->Type-two]]
-        .option  
-            [[option three ->Type-three]]
-
-::Type-three [haml]
-.container.container--type-one
-    <%= window.story.render("Header") %>
-    .story-container
-        .story-container__img.story-container__img--type-three.story-container__img--passage-three
-        %p.story-question
-            Do you have a driver's license?
-    .option-container   
-        .option  
-            [[option one ->Type-one]]
-        .option  
-            [[option one ->Type-two]]
-        .option  
-            [[option one ->Type-three]]
 
 ::Type-four [haml]
 %text-card{:text => "Hello the boi"}

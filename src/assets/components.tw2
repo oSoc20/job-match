@@ -29,7 +29,7 @@
     .container .story-container {
         background-color: var(--grey);
         padding: 30px 20px;
-        min-height: 30%;
+        min-height: 40vh;
 
         display: flex;
         justify-content:center;
@@ -63,6 +63,27 @@
     .progress-bar .progress {
         height: 100%;
         background-color: var(--primary-color);
+    }
+
+    /* Typography */
+
+    p {
+        font-size: var(--font-size-lg);
+    }
+
+    .story-container__text, .story-question {
+        max-width: 70%;
+        font-family: var(--font-type);
+
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+    }
+
+    .story-question {
+        margin: 30px 0 0 0;
     }
     </style>
     `;
@@ -114,7 +135,7 @@
     imageTemplate.innerHTML = `
 
     <style>
-    .story-container--type-two {
+    .story-container--image-template {
         background-color: transparent !important;
     }
 
@@ -133,7 +154,7 @@
                 <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
             </div>
 
-            <div class="story-container">
+            <div class="story-container story-container--image-template">
                 <img id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
             </div>
             <div class="option-container"><slot/></div>

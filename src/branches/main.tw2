@@ -1,67 +1,85 @@
 
 ::Intro-start [haml]
 %image-card{:image => "./images/phone.png"}
-    [[Read message ->message-1]]
+    [[Read message->message-1]]
 
 ::message-1 [haml]
 %text-card{:text => "&#34;Hi, it's Michael. My car broke down and I have to get to work at infrabel. You have to give me a ride!&#34;"}
-    [[But it’s like four in the morning? ->check-time]]
-    [[Get out of bed ->get-out-of-bed]]
+    [[But it’s like four in the morning?->check-time]]
+    [[Get out of bed->get-out-of-bed]]
 
 ::check-time [haml]
 %text-card{:text => "&#34;My team works in shifts! No time for this, you have to come pick me up!&#34;"}
-    [["I'll come and get you" ->get-out-of-bed]]
+    [["I'll come and get you"->get-out-of-bed]]
 
 ::get-out-of-bed [haml]
 %text-card{:text => "While you get out of bed you let out a sigh and you text him: &#34;I’m on my way&#34;"}
-    [[Get ready to pick up your friend ->check-everything]]
+    [[Get ready to pick up your friend->check-everything]]
 
 ::check-everything [haml]
 %text-card{:text => "You’re about to leave. Check if you’ve got everything. Keys. Coffee. Wallet."}
-    [[Check wallet ->wallet]]
+    [[Check wallet->wallet]]
 
 ::wallet [haml]
 %full-card{:image => "./images/wallet.png", :text=>"Do you have a driver's license?"}
-    [[ Yes ->wallet]]
-    [[ No ->tandem]]
+    [[Yes->wallet]]
+    [[No->tandem]]
 
 ::tandem [haml]
 <% window.story.state.vehicle = "tandem" %>
 %text-card{:text => "You put your stuff in your pocket and you go to the garage where you find your tandem."}
-    [[ Go get your friend ->loading-tandem]]
+    [[Go get your friend->loading-tandem]]
 
 ::loading-tandem [haml]
 %image-card{:image => "./images/loading-tandem.png"}
-    [[Listen to Michael ->car-ride-info]]
+    [[Listen to Michael->car-ride-info]]
 
 ::car-ride-info [haml]
 %text-card{:text => "&#34;So I work for Infrabel. We’re responsible for the infrastructure the trains use.&#34;"}
-    [[ What does that mean exactly? ->infrabel-info-part-1 ]]
-    [[ Okay. So where do you want me to drop you off? ]]
+    [[What does that mean exactly?->infrabel-info-part-1]]
+    [[Okay. So where do you want me to drop you off?]]
 
 ::infrabel-info-part-1 [haml]
 %text-card{:text => "&#34;That means we build and maintain the rails, the signs, the signing lights, the electricity lines and much more.&#34;"}
-    [[ What's it like to work there? -> infrabel-info-part-2 ]]
+    [[What's it like to work there?->infrabel-info-part-2]]
 
 ::infrabel-info-part-2 [haml]
 %text-card{:text => "&#34;We’ve got a lot of interesting jobs in engineering, logistics, traffic management, HR, communication and of course: technicians to keep the belgian rail network going! We’re always looking for new people.&#34;"}
-    [[ "Okay. So where do you want me to drop you off?” -> dropoff ]]
+    [["Okay. So where do you want me to drop you off?”->dropoff]]
 
-::dropoff [haml]
-%text-card{:text => "&#34;We’ve got a lot of interesting jobs in engineering, logistics, traffic management, HR, communication and of course: technicians to keep the belgian rail network going! We’re always looking for new people.&#34;"}
-    [[ "Okay. So where do you want me to drop you off?” -> arrival ]]
+::dropoff
+<text-card text=“At the infrabel-headquarters please!”>
+    <%
+       if (true) {
+           "[[Arrive at infrabel->arrival-tandem]]"
+       }
+    %>
+    <%
+        window.story.state.vehicle= "tandem";
+        if(window.story.state.vehicle = "tandem") {
+            return "[[Arrive at infrabel->arrival-tandem]]"
+        } else {
+            return "[[Arrive at infrabel->arrival-car]]"
+        }
+    %>
+</text-card>
 
-::arrival 
-<%= window.story.render("arrival-tandem") %>
-<% 
-    if(window.story.state.vehicle = "tandem") { 
-        window.story.show("arrival-tandem");
-    } 
-%>
-::arrival-tandem [haml]
-%text-card{:text => "haha"}
-    [[ "Okay. So where do you want me to drop you off?” -> arrival ]]
+::arival 
+<script> 
+    if(window.story.state.vehicle === "tandem") {
+        window.story.show("arrival-tandem")
+    } else {
+        window.story.show("arrival-car")
+    }
+</script>
+
+::arrival-tandem  [haml]
+%text-card{:text => "tandem"}
+    [["Okay. So where do you want me to drop you off?”->arrival]]
+
 ::arrival-car [haml]
+%text-card{:text => "car"}
+    [["Okay. So where do you want me to drop you off?”->arrival]]
 
 
 

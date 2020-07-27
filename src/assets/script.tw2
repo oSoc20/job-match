@@ -16,4 +16,15 @@
         return `${progress}%`;
     }
 
+    // show list of passages
+    const navContainer = document.createElement("ul");
+    window.story.passages.forEach((passage) => {
+        const passageElement = document.createElement("li");
+        passageElement.innerHTML = passage.name;
+        passageElement.addEventListener("click", () => {
+            window.story.show(passage.name);
+        });
+        navContainer.appendChild(passageElement);
+    });
 
+    document.getElementsByTagName("body")[0].appendChild(navContainer);

@@ -163,7 +163,45 @@ class ImageCard extends Card {
 }
 
 
+//Chat Card///////////////////////////////////////////////////////////
 
+const chatTemplate = document.createElement("template");
+
+chatTemplate.innerHTML = `
+    <style>
+        .story-container {
+            background-color: white !important;
+        }
+        .story-chatbox {
+            background-color: #9fd5ff !important;
+        }
+    </style>
+    <div>
+        <div class="container">
+            <status-header></status-header>
+
+            <div class="story-container">
+                <div class="story-chatbox">
+                    <p id="text" class="story-container__text">Default card text</p>
+                </div>
+                <img id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
+            </div>
+            <div class="option-container"><slot/></div>
+        </div>
+    </div>
+    `;
+
+class ChatCard extends Card {
+    constructor() {
+        super();
+        this.shadowRoot.appendChild(chatTemplate.content.cloneNode(true));
+
+        this.shadowRoot.querySelector("#image").src =
+            this.getAttribute("image");
+        this.shadowRoot.querySelector("#text").innerText =
+            this.getAttribute("text");
+    }
+}
 
 
 
@@ -246,4 +284,5 @@ class StoryStatus extends HTMLElement {
 window.customElements.define("status-header", StoryStatus);
 window.customElements.define("text-card", TextCard);
 window.customElements.define("image-card", ImageCard);
+window.customElements.define("chat-card", ChatCard);
 window.customElements.define("full-card", FullCard);

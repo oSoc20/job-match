@@ -14,6 +14,7 @@ Twee2::build_config.story_format = 'Snowman'
 ./assets/components.tw2
 
 ./branches/main.tw2
+./branches/maintenance.tw2
 
 ::Start [haml]
 %text-card{:text => "Start game?"}
@@ -34,6 +35,12 @@ Twee2::build_config.story_format = 'Snowman'
 
 ::Type-six [haml]
 %full-card{:text => "Hello the text", :image => "https://avatars3.githubusercontent.com/u/61460540?s=200&v=4"}
+    [[option one ->Type-one]]
+    [[option one ->Type-two]]
+    [[option one ->Type-three]]
+
+::Type-seven [haml]
+%chat-card{:text => "A test", :image => "https://avatars3.githubusercontent.com/u/61460540?s=200&v=4"}
     [[option one ->Type-one]]
     [[option one ->Type-two]]
     [[option one ->Type-three]]

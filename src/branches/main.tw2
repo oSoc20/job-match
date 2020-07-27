@@ -52,14 +52,15 @@
     [[ "Okay. So where do you want me to drop you off?” -> arrival ]]
 
 ::arrival 
+<%= window.story.render("arrival-tandem") %>
 <% 
     if(window.story.state.vehicle = "tandem") { 
         window.story.show("arrival-tandem");
     } 
 %>
 ::arrival-tandem [haml]
-%p
-    haha
+%text-card{:text => "haha"}
+    [[ "Okay. So where do you want me to drop you off?” -> arrival ]]
 ::arrival-car [haml]
 
 

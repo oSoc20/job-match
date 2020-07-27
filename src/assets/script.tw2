@@ -17,7 +17,6 @@
     }
 
     // show list of passages
-    console.log(window.story.passages);
     const navContainer = document.createElement("ul");
     window.story.passages.forEach((passage) => {
         const passageElement = document.createElement("li");

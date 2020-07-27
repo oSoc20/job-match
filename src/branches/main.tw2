@@ -1,39 +1,67 @@
 
 ::Intro-start [haml]
 %image-card{:image => "./images/phone.png"}
-    [[Read message ->Intro-message-1]]
+    [[Read message ->message-1]]
 
-::Intro-message-1 [haml]
+::message-1 [haml]
 %text-card{:text => "&#34;Hi, it's Michael. My car broke down and I have to get to work at infrabel. You have to give me a ride!&#34;"}
-    [[But it’s like four in the morning? ->Intro-check-time]]
-    [[Get out of bed ->Intro-get-out-of-bed]]
+    [[But it’s like four in the morning? ->check-time]]
+    [[Get out of bed ->get-out-of-bed]]
 
-::Intro-check-time [haml]
+::check-time [haml]
 %text-card{:text => "&#34;My team works in shifts! No time for this, you have to come pick me up!&#34;"}
-    [["I'll come and get you" ->Intro-get-out-of-bed]]
+    [["I'll come and get you" ->get-out-of-bed]]
 
-::Intro-get-out-of-bed [haml]
+::get-out-of-bed [haml]
 %text-card{:text => "While you get out of bed you let out a sigh and you text him: &#34;I’m on my way&#34;"}
-    [[Get ready to pick up your friend ->Intro-check-everything]]
+    [[Get ready to pick up your friend ->check-everything]]
 
-::Intro-check-everything [haml]
+::check-everything [haml]
 %text-card{:text => "You’re about to leave. Check if you’ve got everything. Keys. Coffee. Wallet."}
-    [[Check wallet ->Intro-wallet]]
+    [[Check wallet ->wallet]]
 
-::Intro-wallet [haml]
+::wallet [haml]
 %full-card{:image => "./images/wallet.png", :text=>"Do you have a driver's license?"}
-    [[ Yes ->Intro-wallet]]
-    [[ No ->Intro-tandem]]
+    [[ Yes ->wallet]]
+    [[ No ->tandem]]
 
-::Intro-tandem [haml]
+::tandem [haml]
+<% window.story.state.vehicle = "tandem" %>
 %text-card{:text => "You put your stuff in your pocket and you go to the garage where you find your tandem."}
-    [[ Go get your friend ->Intro-loading-tandem]]
+    [[ Go get your friend ->loading-tandem]]
 
-::Intro-loading-tandem [haml]
+::loading-tandem [haml]
 %image-card{:image => "./images/loading-tandem.png"}
-    [[Listen to Michael ->Intro-car-ride-info]]
+    [[Listen to Michael ->car-ride-info]]
 
-::Intro-car-ride-info [haml]
+::car-ride-info [haml]
 %text-card{:text => "&#34;So I work for Infrabel. We’re responsible for the infrastructure the trains use.&#34;"}
-    [[ What does that mean exactly? ]]
+    [[ What does that mean exactly? ->infrabel-info-part-1 ]]
     [[ Okay. So where do you want me to drop you off? ]]
+
+::infrabel-info-part-1 [haml]
+%text-card{:text => "&#34;That means we build and maintain the rails, the signs, the signing lights, the electricity lines and much more.&#34;"}
+    [[ What's it like to work there? -> infrabel-info-part-2 ]]
+
+::infrabel-info-part-2 [haml]
+%text-card{:text => "&#34;We’ve got a lot of interesting jobs in engineering, logistics, traffic management, HR, communication and of course: technicians to keep the belgian rail network going! We’re always looking for new people.&#34;"}
+    [[ "Okay. So where do you want me to drop you off?” -> dropoff ]]
+
+::dropoff [haml]
+%text-card{:text => "&#34;We’ve got a lot of interesting jobs in engineering, logistics, traffic management, HR, communication and of course: technicians to keep the belgian rail network going! We’re always looking for new people.&#34;"}
+    [[ "Okay. So where do you want me to drop you off?” -> arrival ]]
+
+::arrival 
+<% 
+    if(window.story.state.vehicle = "tandem") { 
+        window.story.show("arrival-tandem");
+    } 
+%>
+::arrival-tandem [haml]
+%p
+    haha
+::arrival-car [haml]
+
+
+
+::Intro 

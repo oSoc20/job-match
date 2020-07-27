@@ -51,25 +51,13 @@ cardTemplate.innerHTML = `
 }
 
 
-/* progress bar */
 
-.progress-bar { 
-    height: 14px;
-    background-color: var(--grey);
-    width: 100%;
-}
-
-.progress-bar .progress {
-    height: 100%;
-    background-color: var(--primary-color);
-}
 </style>
 `;
 
 class Card extends HTMLElement {
     constructor() {
         super();
-        console.log("card ding");
         this.attachShadow( { mode: "open" });
         this.shadowRoot.appendChild(cardTemplate.content.cloneNode(true));
     }
@@ -83,9 +71,7 @@ const textTemplate = document.createElement('template');
 textTemplate.innerHTML = `
 <div>
     <div class="container container--type-one">
-        <div class="header">
-            <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
-        </div>
+        <status-header></status-header>
 
         <div class="story-container">
             <p id="text" class="story-container__text">Default card text</p>
@@ -113,9 +99,7 @@ const imageTemplate = document.createElement('template');
 imageTemplate.innerHTML = `
 <div>
     <div class="container">
-        <div class="header">
-            <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
-        </div>
+        <status-header></status-header>
 
         <div class="story-container">
             <img id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
@@ -150,9 +134,7 @@ const fullTemplate = document.createElement("template");
 fullTemplate.innerHTML = `
 <div>
     <div class="container">
-        <div class="header">
-            <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
-        </div>
+        <status-header></status-header>
 
         <div class="story-container">
             <img id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
@@ -175,8 +157,42 @@ class FullCard extends Card {
     }
 }
 
+const statusTemplate = document.createElement("template");
+statusTemplate.innerHTML = `
+<style>
+.progress-bar { 
+    height: 14px;
+    background-color: var(--grey);
+    width: 100%;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+</style>
+<div class="header">
+    <div class="progress-bar">
+        <div class="progress" style="width:0"></div>
+    </div>
+</div>
+`;
+class StoryStatus extends HTMLElement {
+    constructor(){
+        super();
+        this.attachShadow( { mode: "open" });
+        this.shadowRoot.appendChild(statusTemplate.content.cloneNode(true));
+    }
+
+    connectedCallback() {
+        console.log("connected callback");
+        this.shadowRoot.querySelector(".progress").style.width = window.setup.getStoryProgressInPercentage() + "%";
+    }
+}
+window.customElements.define("status-header", StoryStatus);
 window.customElements.define("text-card", TextCard);
 window.customElements.define("image-card", ImageCard);
 window.customElements.define("full-card", FullCard);
+
 
 

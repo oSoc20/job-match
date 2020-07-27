@@ -1,4 +1,8 @@
 ::style [stylesheet]
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }

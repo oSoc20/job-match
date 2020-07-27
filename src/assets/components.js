@@ -159,6 +159,7 @@ class ImageCard extends Card {
         this.shadowRoot.querySelector("#image").src =
             this.getAttribute("image");
     }
+
 }
 
 
@@ -228,7 +229,18 @@ class StoryStatus extends HTMLElement {
 
     connectedCallback() {
         console.log("connected callback");
-        this.shadowRoot.querySelector(".progress").style.width = window.setup.getStoryProgressInPercentage() + "%";
+        this.shadowRoot.querySelector(".progress").style.width = this.getStoryProgressInPercentage();
+    }
+
+    getStoryProgressInPercentage() {
+        let pageId = this.getCurrentPassageId();
+        let  storyLenght = window.story.passages.length;
+        const progress = (pageId / storyLenght) * 100;
+        return `${progress}%`
+    }
+
+    getCurrentPassageId() {
+        return window.story.history[window.story.history.length - 1];
     }
 }
 window.customElements.define("status-header", StoryStatus);

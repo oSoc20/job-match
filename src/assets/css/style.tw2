@@ -22,6 +22,7 @@ a {
     justify-content: center;
     align-items:center;
     margin: 15px;
+    padding: 15px 20px;
     font-size: var(--font-size-lg);
     background-color: var(--primary-color-dark);
 }

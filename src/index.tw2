@@ -17,7 +17,7 @@ Twee2::build_config.story_format = 'Snowman'
 
 ::Start [haml]
 %text-card{:text => "Start game?"}
-    [[I'm ready ->Intro-start]]
+    [[I'm ready ->intro-start]]
 
 
 ::Type-four [haml]

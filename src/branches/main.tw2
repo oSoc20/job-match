@@ -1,5 +1,5 @@
 
-::Intro-start [haml]
+::intro-start [haml]
 %image-card{:image => "./images/phone.png"}
     [[Read message->message-1]]
 
@@ -37,50 +37,81 @@
 ::car-ride-info [haml]
 %text-card{:text => "&#34;So I work for Infrabel. We’re responsible for the infrastructure the trains use.&#34;"}
     [[What does that mean exactly?->infrabel-info-part-1]]
-    [[Okay. So where do you want me to drop you off?]]
+    [[Okay. So where do you want me to drop you off?->dropoff]]
 
 ::infrabel-info-part-1 [haml]
 %text-card{:text => "&#34;That means we build and maintain the rails, the signs, the signing lights, the electricity lines and much more.&#34;"}
     [[What's it like to work there?->infrabel-info-part-2]]
+    [[Okay. So where do you want me to drop you off?->dropoff]]
 
 ::infrabel-info-part-2 [haml]
 %text-card{:text => "&#34;We’ve got a lot of interesting jobs in engineering, logistics, traffic management, HR, communication and of course: technicians to keep the belgian rail network going! We’re always looking for new people.&#34;"}
     [["Okay. So where do you want me to drop you off?”->dropoff]]
 
-::dropoff
-<text-card text=“At the infrabel-headquarters please!”>
-    <%
-       if (true) {
-           "[[Arrive at infrabel->arrival-tandem]]"
-       }
-    %>
-    <%
-        window.story.state.vehicle= "tandem";
-        if(window.story.state.vehicle = "tandem") {
-            return "[[Arrive at infrabel->arrival-tandem]]"
-        } else {
-            return "[[Arrive at infrabel->arrival-car]]"
-        }
-    %>
-</text-card>
+::dropoff [haml]
+%text-card{:text => "&#34;At the infrabel-headquarters, please!&#34;"}
+    [[Head to infrabel->arival]]
 
 ::arival 
 <script> 
     if(window.story.state.vehicle === "tandem") {
-        window.story.show("arrival-tandem")
+        window.story.show("arrival-tandem-part-1")
     } else {
         window.story.show("arrival-car")
     }
 </script>
 
-::arrival-tandem  [haml]
-%text-card{:text => "tandem"}
-    [["Okay. So where do you want me to drop you off?”->arrival]]
+::arrival-tandem-part-1  [haml]
+%text-card{:text => "As you arrive at infrabel, Michael rushes of your tandem and runs inside. &#34;Thank you, I owe you!&#34;, he shouts as he disappears in the building."}
+    [[Turn back home->arrival-tandem-part-2]]
+
+::arrival-tandem-part-2  [haml]
+%text-card{:text => "Just before you leave, you realise there’s still a heavy weight you’re carrying. It’s Michael's bag he forgot on the luggage rack."}
+    [[Inspect bag->inspect-bag]]
 
 ::arrival-car [haml]
-%text-card{:text => "car"}
-    [["Okay. So where do you want me to drop you off?”->arrival]]
+%text-card{:text => "As you arrive at Infrabel, Michael can’t wait to get out of the car and rushes inside. &#34;Thank you, I owe you!&#34;, he shouts as he disappears inside. In that moment you realise Michael forgot to take his bag out of the trunk of the car."}
+    [[Inspect bag->inspect-bag]]
+
+::inspect-bag [haml]
+%image-card{:image => "./images/lost-items.png"}
+    [[Inspect toolbox->inspect-toolbox]]
+    [[Inspect safety boots->inspect-safety-boots]]
+    [[Inspect manual->inspect-manual]]
+
+::inspect-toolbox [haml]
+%full-card{:image => "./images/toolbox.png", :text=>"Infrabel depends on their technicians. Technicians depend on their toolbox."}
+    [[Back->inspect-bag]]
+
+::inspect-safety-boots [haml]
+%full-card{:image => "./images/sneakers.png", :text=>"At Infrabel, safety is always the highest priority. That's why Michael really needs these boots."}
+    [[Back->inspect-bag]]
+
+::inspect-manual [haml]
+%full-card{:image => "./images/manual.png", :text=>"Basics of electricity and mechanics, huh? I'm sure Infrabel appreciates he's eager to learn."}
+    [[Back->inspect-bag]]
+
+::chase-michael [haml]
+%text-card{:text => "Because these things seem important for Michael, you decide to go after him."}
+    [[Enter Infrabel->enter-building]]
+
+::enter-building [haml]
+%full-card{:image => "./images/secretary.png", :text => "You enter the building of Infrabel. Michael is nowhere to be seen but the secretary is ready to help."}
+    [["Excuse me, could you give this bag to Michael when you see him?"->ask-secretary]]
+
+::ask-secretary [haml]
+%text-card{:text => "&#34;I'm sorry but I'm too busy.. However, there's a guided tour scheduled today for job seekers. Why don't you tag along? I'm sure you'll find your friend along the way!&#34;"}
+    [[Agree->start-tour]]
+
+::start-tour [haml]
+%text-card{:text => "&#34;Great! You can now tag along with the tour. But before you do, make sure to go to the safety department.&#34;"}
+    [[Go to the safety department->loading-tour]]
 
 
+::loading-tour [haml]
+%image-card{:image => "./images/loading-tandem.png"}
+    [[Listen to Michael->car-ride-info]]
 
-::Intro 
+::safety-welcome [haml]
+%text-card{:text => "&#34;Welcome! You’re the latest joiner for the guided tour?&#34;"}
+    [[Go to the safety department->loading-tour]]

@@ -136,7 +136,7 @@
             width: 275px;
             height: 370px;
             margin: 30px;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         </style>

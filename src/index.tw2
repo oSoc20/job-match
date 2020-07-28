@@ -15,6 +15,7 @@ Twee2::build_config.story_format = 'Snowman'
 
 ./branches/main.tw2
 ./branches/maintenance.tw2
+./branches/trainoperator.tw2
 
 ::Start [haml]
 %text-card{:text => "Start game?"}

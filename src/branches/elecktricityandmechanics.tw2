@@ -1,0 +1,52 @@
+::EM-start [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Hi there, my name is Jonas and I'm the ambassador of electromechanics. I will guide you through my department."}
+    [[Okay->EM-explanation]]
+
+::EM-explanation [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Our colleagues with talent in electricity, electronics and mechanics work with us on signalling, overhead lines, substations and electrical installations."}
+    [[Cool->EM-help]]
+
+::EM-help [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "We're always looking for talented people. Maybe we can use your help!"}
+    [[Sure!->EM-law-question]]
+
+::EM-law-question [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Do you know which law is used to calculate the relationship between electrical voltage, electrical current and resistance in a circuit?"}
+    [[Joule's law->EM-law-false]]
+    [[Boyle's law->EM-law-false]]
+    [[Ohm's law->EM-law-correct]]
+
+::EM-law-false [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "I'm afraid that's the wrong answer. Try again"}
+    [[Okay->EM-law-question]]
+
+::EM-law-correct [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Correct! Ready for the next question?"}
+    [[Yes!->EM-formula-question]]
+
+::EM-formula-question [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "What is the formula for Ohm's law?"}
+    [[U = I * R->EM-formula-correct]]
+    [[R = U * I->EM-formula-false]]
+    [[U = I / R->EM-formula-false]]
+
+::EM-formula-false [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "I'm afraid that's the wrong answer. Try again"}
+    [[Okay->EM-formula-question]]
+
+::EM-formula-correct [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Well done! You really are talented! There are some open vacancies for this department. Would you like to take a look?"}
+    [[Yes->EM-vacancies]]
+    [[No, thank you->EM-vacancies]]
+
+::EM-vacancies [haml]
+%text-card{ :text => "vacancies"}

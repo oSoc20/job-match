@@ -61,3 +61,4 @@ As mentioned before the Job-Match project uses [web-components](https://develope
 * *full-card*: This card combines the text- and image-card.
 * *status-header*: This component is present in all cards, it shows how far the user is progressed in the story.
 
+t

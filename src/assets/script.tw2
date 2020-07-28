@@ -3,18 +3,9 @@
     document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1">';
     document.getElementsByTagName('head')[0].innerHTML += '<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">';
 
-    const getCurrentPassageId = () => {
-        return window.story.history[window.story.history.length - 1];
-    }
-
     window.setup = window.setup || {};
 
-    window.setup.getStoryProgressInPercentage = () => {
-        const pageId = getCurrentPassageId();
-        const storyLength = window.story.passages.length;
-        const progress = (pageId / storyLength) * 100;
-        return `${progress}%`;
-    }
+
 
     // show list of passages
     const navContainer = document.createElement("ul");

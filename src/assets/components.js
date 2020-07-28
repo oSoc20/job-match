@@ -173,8 +173,22 @@ chatTemplate.innerHTML = `
             background-color: white !important;
         }
         .story-chatbox {
-            background-color: #9fd5ff !important;
+            background-color: #d0dcff !important;
+            width: 100%;
+            padding: 20px;
+            border-radius: 2px;
         }
+        .character-image {
+            height: 50px;
+            width: 50px;
+            margin-right: 100%;
+            margin-top: 10px;
+        }
+        
+        .story-chatbox__text{
+            max-width: 100%;
+        }
+        
     </style>
     <div>
         <div class="container">
@@ -182,9 +196,9 @@ chatTemplate.innerHTML = `
 
             <div class="story-container">
                 <div class="story-chatbox">
-                    <p id="text" class="story-container__text">Default card text</p>
+                    <p class="story-chatbox__text" id="text" class="story-container__text">Default card text</p>
                 </div>
-                <img id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
+                <img class="character-image" id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
             </div>
             <div class="option-container"><slot/></div>
         </div>

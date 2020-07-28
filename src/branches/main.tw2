@@ -127,108 +127,108 @@
     [[Yes, i am->safety-joiner]]
     [[No, I'm actually searching for my friend Michael->safety-asking]]
 
-::safety-joiner
+::safety-joiner [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "No problem I'll repeat the explanation."}
     [[Thanks!->safety-explanation]]
 
-::safety-asking
+::safety-asking [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Michael? I haven’t seen him. But either way if you want to search for him you’ll have to be up to date with our safety measures."}
     [[Okay->safety-explanation]]
 
-::safety-explanation
+::safety-explanation [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "So at Infrabel, safety is always our highest priority. That’s why I’m here, I make sure that our workers who are out there on the track are as safe as possible."}
     [[Okay>safety-boots]]
 
-::safety-boots
+::safety-boots [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "I see you already have a pair of safety boots?"}
     [[Put on the boots->safety-questions-intro]]
     [[No these are Michael's boots->safety-new-pair]]
 
-::safety-new-pair
+::safety-new-pair [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Here is your own pair, You can put them on now."}
     [[Put on the boots->safety-questions-intro]]
 
-::safety-questions-intro
+::safety-questions-intro [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "I’m going to give you some information about the safety practices at infrabel."}
     [[Okay>safety-machine-question]]
 
-::safety-machine-question
+::safety-machine-question [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "To start with: imagine you want to use a machine but it does not work properly. what do you do?"}
     [[I try to use it anyway->safety-machine-false]]
     [[I report it immediately->safety-machine-correct]]
 
-::safety-machine-false
+::safety-machine-false [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Attention!"}
     [[Yes?->safety-machine-explanation]]
 
-::safety-machine-correct
+::safety-machine-correct [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Correct!"}
     [[Thanks!->safety-machine-explanation]]
 
-::safety-machine-explanation
+::safety-machine-explanation [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Always notify a superior. Every malfunction could be dangerous."}
     [[Okay!->safety-walking-question]]
 
-::safety-walking-question
+::safety-walking-question [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "When walking alongside the tracks, in wich direction should you walk?"}
     [[The same direction as the train->safety-walking-false]]
     [[The opposite direction of the train->safety-walking-correct]]
 
-::safety-walking-false
+::safety-walking-false [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Attention!"}
     [[Yes?->safety-machine-explanation]]
 
-::safety-walking-correct
+::safety-walking-correct [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Correct!"}
     [[Thanks!->safety-machine-explanation]]
 
-::safety-walking-explanation
+::safety-walking-explanation [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Always walk in the opposite direction. This way you can keep an eye on the train and avoid risks."}
     [[Okay!->safety-tired-question]]
 
-::safety-tired-question
+::safety-tired-question [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "You feel very dizzy before your shift. Whay will you do?"}
     [[Man up and go to work->safety-tired-false]]
     [[I'll report it. Its not safe->safety-tired-correct]]
 
-::safety-tired-false
+::safety-tired-false [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Attention!"}
     [[Yes?->safety-tired-explanation]]
 
-::safety-tired-correct
+::safety-tired-correct [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Correct"}
     [[Thanks!->safety-tired-explanation]]
 
-::safety-tired-explanation
+::safety-tired-explanation [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "You should never work in dangerous surroundings when feeling dizzy."}
     [[Ofcourse->ready]]
 
-::ready
+::ready [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "You're ready now!"}
     [[Great->branch-selection]]
 
-::branch-selection
+::branch-selection [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "You can choose one of the three branches within infrabel’s technician jobs to explore. I hope you'll find your friend, good luck!"}
-    [[Maintenance & Renewal->ready]]
+    [[Maintenance & Renewal->Maintenance-start]]
     [[Train operators & Renewal->ready]]
     [[Elektromechanics & Renewal->ready]]

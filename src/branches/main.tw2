@@ -22,7 +22,7 @@
 
 ::wallet [haml]
 %full-card{:image => "./images/wallet.png", :text=>"Do you have a driver's license?"}
-    [[Yes->wallet]]
+    [[Yes->car]]
     [[No->tandem]]
 
 ::tandem [haml]
@@ -111,7 +111,7 @@
 
 ::enter-building [haml]
 %full-card{:image => "./images/secretary.png", :text => "You enter the building of Infrabel. Michael is nowhere to be seen but the secretary is ready to help."}
-    [["Excuse me, could you give this bag to Michael when you see him?"->ask-secretary]]
+    [[Excuse me, could you give this bag to Michael when you see him?->ask-secretary]]
 
 ::ask-secretary [haml]
 %chat-card{ :image => "./images/secretary-profile.png", |

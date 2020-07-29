@@ -5,17 +5,30 @@
 
     window.setup = window.setup || {};
 
+    const getCookie = (cookieName) => {
+		// get cookies and process the string
+		const cookieString = document.cookie;
+		const cookieArray = cookieString.split(';');
+		const cookies = {}
+		cookieArray.forEach( (cookie) => {
+			const parts = cookie.split('=');
+			if ( parts[0] && parts[1] ) cookies[parts[0].trim()] = parts[1].trim();
+		})
 
+		return cookies[cookieName];
+	};
 
     // show list of passages
-    const navContainer = document.createElement("ul");
-    window.story.passages.forEach((passage) => {
-        const passageElement = document.createElement("li");
-        passageElement.innerHTML = passage.name;
-        passageElement.addEventListener("click", () => {
-            window.story.show(passage.name);
+    if (getCookie("devMode")) {
+        const navContainer = document.createElement("ul");
+        window.story.passages.forEach((passage) => {
+            const passageElement = document.createElement("li");
+            passageElement.innerHTML = passage.name;
+            passageElement.addEventListener("click", () => {
+                window.story.show(passage.name);
+            });
+            navContainer.appendChild(passageElement);
         });
-        navContainer.appendChild(passageElement);
-    });
 
-    document.getElementsByTagName("body")[0].appendChild(navContainer);
+        document.getElementsByTagName("body")[0].appendChild(navContainer);
+    }

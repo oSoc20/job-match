@@ -116,7 +116,7 @@
             console.log("text card");
             this.shadowRoot.appendChild(textTemplate.content.cloneNode(true));
 
-            this.shadowRoot.querySelector("#text").innerText =
+            this.shadowRoot.querySelector("#text").innerHTML =
                 this.getAttribute("text");
         }
 
@@ -227,7 +227,7 @@
 
             this.shadowRoot.querySelector("#image").src =
                 this.getAttribute("image");
-            this.shadowRoot.querySelector("#text").innerText =
+            this.shadowRoot.querySelector("#text").innerHTML =
                 this.getAttribute("text");
         }
     }

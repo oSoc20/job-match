@@ -49,7 +49,7 @@
     [[No, thank you->EM-vacancies]]
 
 ::EM-vacancies [haml]
-%text-card{ :text => "vacancies"}
+%text-card{ :text => "<a target='blank' href='https://infrabel.be/nl/elektromechanica'>Vacancies (dutch)</a><br><a target='blank' href='https://infrabel.be/fr/electromecanique'>Vacancies (french)</a>"}
     [[Continue->EM-branches]]
 
 ::EM-branches [haml]

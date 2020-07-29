@@ -37,7 +37,7 @@
     [[No->Ending-share]]
 
 ::Ending-vacancies [haml]
-%text-card{ :text => "vacancies"}
+%text-card{ :text => "<a target='blank' href='https://infrabel.be/nl/jobs/onze-beroepen'>Vacancies (dutch)</a><br><a target='blank' href='https://infrabel.be/fr/jobs/nos-metiers'>Vacancies (french)</a>"}
     [[Okay->Ending-see]]
 
 ::Ending-share [haml]
@@ -57,4 +57,4 @@
     [[You're welcome! See you soon!->Ending-end]]
 
 ::Ending-end [haml]
-%text-card{ :text => "This is the end of the app, thanks for participating. If you want more infromation about infrabel, go to www.infrabel.be"}
+%text-card{ :text => "This is the end of the app, thanks for participating. If you want more infromation about infrabel, go to <a href='https://infrabel.be'>www.infrabel.be</a>"}

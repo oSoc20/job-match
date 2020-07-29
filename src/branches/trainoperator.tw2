@@ -54,7 +54,7 @@
     [[No, thanks->Trainoperator-vacancies]]
 
 ::Trainoperator-vacancies [haml]
-%text-card{ :text => "vacancies"}
+%text-card{ :text => "<a target='blank' href='https://infrabel.be/nl/bestuurders-werktrein'>Vacancies (dutch)</a><br><a target='blank' href='https://infrabel.be/fr/conducteurs-de-trains-de-travaux'>Vacancies (french)</a>"}
     [[Okay->Trainoperator-branches]]
 
 ::Trainoperator-branches [haml]

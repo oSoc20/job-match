@@ -42,7 +42,7 @@
 
 ::Maintenance-vacancies [haml]
 %chat-card{ :image => "./images/fred-profile.png", |
-    :text => "Vacancies links"}
+    :text => "<a target='blank' href=' https://infrabel.be/nl/onderhoud-vernieuwing-van-de-sporen'>Vacancies (dutch)</a><br><a target='blank' href='https://infrabel.be/fr/entretien-renouvellement-des-voies'>Vacancies (french)</a>"}
     [[Explore Infrabel further->Maintenance-branches]]
     [[End your story->Ending-start]]
 

@@ -1,6 +1,6 @@
 ::Script [script]
     // enables correct responsive behaviour
-    document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1">';
+    document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
     document.getElementsByTagName('head')[0].innerHTML += '<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">';
 
     window.setup = window.setup || {};

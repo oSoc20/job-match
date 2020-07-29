@@ -18,26 +18,19 @@ body {
 a {
     min-width: 172px;
     min-height: 54px;
-    display: flex;
-    justify-content: center;
-    align-items:center;
     margin: 15px;
     padding: 15px 20px;
     font-size: var(--font-size-lg);
     background-color: var(--primary-color-dark);
-}
-a {
-    width: 100%;
+
     font-family: var(--font-type);
     color: var(--grey);
 
     border: none;
     text-align: center;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    text-align: center;
 }
 
 a:hover {

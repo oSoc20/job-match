@@ -146,7 +146,7 @@
 ::safety-explanation [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "So at Infrabel, safety is always our highest priority. That’s why I’m here, I make sure that our workers who are out there on the track are as safe as possible."}
-    [[Okay>safety-boots]]
+    [[Okay->safety-boots]]
 
 ::safety-boots [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
@@ -162,7 +162,7 @@
 ::safety-questions-intro [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "I’m going to give you some information about the safety practices at infrabel."}
-    [[Okay>safety-machine-question]]
+    [[Okay->safety-machine-question]]
 
 ::safety-machine-question [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |

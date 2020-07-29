@@ -19,9 +19,13 @@ Twee2::build_config.story_format = 'Snowman'
 ./branches/elecktricityandmechanics.tw2
 ./branches/ending.tw2
 
-::Start [haml]
-%text-card{:text => "Start game?"}
-    [[I'm ready ->intro-start]]
+::Start 
+<div class="start-container">
+    <img class="start-container__logo" src="./images/infrabel.svg" />
+    <img class="start-container__picture" src="./images/start-picture.svg" />
+    <p>Find out more about Infrabel and it's jobs in this interactive story. </p>
+    [[Start ->intro-start]]
+</div>
 
 
 ::Header [haml]

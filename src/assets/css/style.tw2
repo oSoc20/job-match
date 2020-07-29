@@ -1,4 +1,5 @@
 ::style [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -14,6 +15,31 @@ body {
     position: relative;
 }
 
+ .start-container {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .start-container > * {
+        width: 100%;
+    }
+
+    .start-container p {
+        width: 70%;
+        font-family: var(--font-type);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+
 /* option button */
 a {
     min-width: 172px;
@@ -28,7 +54,7 @@ a {
 
     border: none;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 22px;
 }

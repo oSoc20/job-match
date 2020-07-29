@@ -7,10 +7,10 @@
             --primary-color-dark: #273951;
             --grey: #E7EEF5;
 
-            --font-type: 'Roboto';
+            --font-type: Montserrat;
             --font-size-lg: 18px;
         }
-        *{
+        * {
             box-sizing: border-box;
         }
         .container {
@@ -72,7 +72,7 @@
             max-width: 70%;
             font-family: var(--font-type);
 
-            font-weight: 600;
+            font-weight: 400;
             font-size: 18px;
             line-height: 22px;
             text-align: center;
@@ -116,8 +116,7 @@
             console.log("text card");
             this.shadowRoot.appendChild(textTemplate.content.cloneNode(true));
 
-            this.shadowRoot.querySelector("#text").innerHTML =
-                this.getAttribute("text");
+            this.shadowRoot.querySelector("#text").innerHTML = `<p> ${this.getAttribute("text")} </p>`
         }
 
     }
@@ -227,8 +226,7 @@
 
             this.shadowRoot.querySelector("#image").src =
                 this.getAttribute("image");
-            this.shadowRoot.querySelector("#text").innerHTML =
-                this.getAttribute("text");
+            this.shadowRoot.querySelector("#text").innerHTML = `<p> ${this.getAttribute("text")} </p>`
         }
     }
 
@@ -310,6 +308,9 @@
             return window.story.history[window.story.history.length - 1];
         }
     }
+
+   
+
     window.customElements.define("status-header", StoryStatus);
     window.customElements.define("text-card", TextCard);
     window.customElements.define("image-card", ImageCard);

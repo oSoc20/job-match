@@ -50,3 +50,10 @@
 
 ::EM-vacancies [haml]
 %text-card{ :text => "vacancies"}
+
+::EM-branches [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Would you like to check out the other departments?"}
+    [[Yes->change-branch]]
+    %a{:href => "javascript:window.close()"}
+        No thanks

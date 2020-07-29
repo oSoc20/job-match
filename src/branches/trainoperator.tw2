@@ -31,7 +31,7 @@
     :text => "I'm afraid that's the wrong answer. Try again"}
     [[Okay->Trainoperator-speed-question]]
 
-::Trainoperator-speed-true [haml]
+::Trainoperator-speed-correct [haml]
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "Good job! Ready for the next question?"}
     [[Yes!->Trainoperator-gear-question]]
@@ -44,6 +44,7 @@
 ::Trainoperator-gear-image [haml]
 %image-card{ :image => "./images/toolbox.png"}
     [[Counter clockwise->Trainoperator-gear-wrong]]
+    [[Clockwise->Trainoperator-gear-true]]
 
 ::Trainoperator-gear-wrong [haml]
 %chat-card{ :image => "./images/toolbox.png", |
@@ -58,5 +59,12 @@
 
 ::Trainoperator-vacancies [haml]
 %text-card{ :text => "vacancies"}
+    [[Okay->Trainoperator-branches]]
 
+::Trainoperator-branches [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Would you like to check out the other departments?"}
+    [[Yes->change-branch]]
+    %a{:href => "javascript:window.close()"}
+        No thanks
 

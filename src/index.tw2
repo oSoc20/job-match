@@ -16,35 +16,12 @@ Twee2::build_config.story_format = 'Snowman'
 ./branches/main.tw2
 ./branches/maintenance.tw2
 ./branches/trainoperator.tw2
+./branches/elecktricityandmechanics.tw2
 
 ::Start [haml]
 %text-card{:text => "Start game?"}
     [[I'm ready ->intro-start]]
 
-
-::Type-four [haml]
-%text-card{:text => "Hello the boi"}
-    [[option one ->Type-one]]
-    [[option one ->Type-two]]
-    [[option one ->Type-three]]
-
-::Type-five [haml]
-%image-card{:image => "./images/lost-items.png"}
-    [[option one ->Type-one]]
-    [[option one ->Type-two]]
-    [[option one ->Type-three]]
-
-::Type-six [haml]
-%full-card{:text => "Hello the text", :image => "https://avatars3.githubusercontent.com/u/61460540?s=200&v=4"}
-    [[option one ->Type-one]]
-    [[option one ->Type-two]]
-    [[option one ->Type-three]]
-
-::Type-seven [haml]
-%chat-card{:text => "A test", :image => "https://avatars3.githubusercontent.com/u/61460540?s=200&v=4"}
-    [[option one ->Type-one]]
-    [[option one ->Type-two]]
-    [[option one ->Type-three]]
 
 ::Header [haml]
 .header

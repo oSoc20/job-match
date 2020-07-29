@@ -82,6 +82,7 @@
     [[Inspect toolbox->inspect-toolbox]]
     [[Inspect safety boots->inspect-safety-boots]]
     [[Inspect manual->inspect-manual]]
+    [[Continue->chase-michael]]
 
 ::inspect-toolbox [haml]
 %full-card{:image => "./images/toolbox.png", :text=>"Infrabel depends on their technicians. Technicians depend on their toolbox."}
@@ -230,5 +231,12 @@
 %chat-card{ :image => "./images/toolbox.png", |
     :text => "You can choose one of the three branches within infrabel’s technician jobs to explore. I hope you'll find your friend, good luck!"}
     [[Maintenance & Renewal->Maintenance-start]]
-    [[Train operators & Renewal->ready]]
-    [[Elektromechanics & Renewal->ready]]
+    [[Train operators & Renewal->Trainoperator-start]]
+    [[Electromechanics & Renewal->EM-start]]
+
+::change-branch [haml]
+%chat-card{ :image => "./images/toolbox.png", |
+    :text => "Which department would you like to check out next?"}
+    [[Maintenance & Renewal->Maintenance-start]]
+    [[Train operators & Renewal->Trainoperator-start]]
+    [[Electromechanics & Renewal->EM-start]]

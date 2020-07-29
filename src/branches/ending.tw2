@@ -1,51 +1,60 @@
-::Ending-start
+
+
+::Ending-start [haml]
 %text-card{ :text => "You haven't found Michael yet but decide to go home and take his gear with you"}
     [[Go to the exit->Ending-exit]]
 
-::Ending-exit
+::Ending-exit [haml]
 %text-card{ :text => "You walk towards the exit but right before you leave you spot Michael in HR's Office."}
     [[Go to the HR office->Ending-HR]]
 
-::Ending-HR
+::Ending-HR [haml]
 %text-card{ :text => "Michael was working for HR all this time. No wonder you couldn't find him at the technical departments."}
     [[Go to Michael->Ending-question]]
 
-::Ending-question
+::Ending-question [haml]
 %chat-card{ :image => "./images/michael-profile.png", |
     :text => "What are you still doing here?"}
     [[You forgot your gear. I was looking for you all day and winded up getting a guided tour through Infrabel.->Ending-tour]]
 
-::Ending-tour
+::Ending-tour [haml]
 %chat-card{ :image => "./images/michael-profile.png", |
     :text => "How could I be so clumsy to forget the gear for my newest employee! Did you enjoy the guided tour?"}
     [[Yes->Ending-interested]]
     [[No->Ending-uninterested]]
 
 
-::Ending-interested
+::Ending-interested [haml]
 %chat-card{ :image => "./images/michael-profile.png", |
-    :text => ""}
-    [[Yes->Ending-interested]]
-    [[No->Ending-uninterested]]
+    :text => "I didn't expect you would be interested in our technical jobs. I'm always looking for new employees. Would you like to check out our open vacancies?"}
+    [[Yes->Ending-vacancies]]
+    [[No->Ending-share]]
 
-::Ending-uninterested
+::Ending-uninterested [haml]
 %chat-card{ :image => "./images/michael-profile.png", |
-    :text => ""}
-    [[Yes->Ending-interested]]
-    [[No->Ending-uninterested]]
+    :text => "That's okay. But did you know Infrabel has more versatile jobs than we can show you in one guided tour? Would you like to discover these jobs and check out our open vacancies?"}
+    [[Yes->Ending-vacancies]]
+    [[No->Ending-share]]
 
-::Ending-vacancies
+::Ending-vacancies [haml]
 %text-card{ :text => "vacancies"}
-    [[Okay->Trainoperator-branches]]
+    [[Okay->Ending-see]]
 
-::Ending-share
+::Ending-share [haml]
 %chat-card{ :image => "./images/michael-profile.png", |
-    :text => ""}
-    [[Yes->Ending-interested]]
-    [[No->Ending-uninterested]]
+    :text => "Okay, no worries! Just know we are always looking for new people. Don't hesitate to share this game with friends who would be interested in technical jobs."}
+    [[Share->Ending-share]]
+    [[Next->Ending-thanks]]
 
-::Ending-see
+::Ending-see [haml]
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => "Did you see something you like? Don't hesitate to apply for the job! It would be awesome to have you as a colleague."}
+    [[Next->Ending-thanks]]
 
-::Ending-thanks
+::Ending-thanks [haml]
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => "Anyway, thank you for the ride and for delivering my gear! I owe you!"}
+    [[You're welcome! See you soon!-Ending-end]]
 
-::Ending-end
+::Ending-end [haml]
+%text-card{ :text => "This is the end of the app, thanks for participating"}

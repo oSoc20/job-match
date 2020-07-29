@@ -128,7 +128,7 @@
     [[Arrive at safety department->safety-welcome]]
 
 ::safety-welcome [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "Hi I’m Mark, head of safety. Welcome! You’re the latest joiner for the guided tour?"}
     [[Yes, i am->safety-joiner]]
     [[No, I'm actually searching for my friend Michael->safety-asking]]

@@ -1,4 +1,4 @@
-<!-- Vx.3 -->
+<!-- Vx.4 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,33 +38,26 @@ body {
 a {
     min-width: 172px;
     min-height: 54px;
-    display: flex;
-    justify-content: center;
-    align-items:center;
     margin: 15px;
     padding: 15px 20px;
     font-size: var(--font-size-lg);
     background-color: var(--primary-color-dark);
-}
-a {
-    width: 100%;
+
     font-family: var(--font-type);
     color: var(--grey);
 
     border: none;
     text-align: center;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    text-align: center;
 }
 
 a:hover {
     color: var(--primary-color);
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// enables correct responsive behaviour
-    document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1">';
+    document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
     document.getElementsByTagName('head')[0].innerHTML += '<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">';
 
     window.setup = window.setup || {};
@@ -272,15 +265,25 @@ const cardTemplate = document.createElement("template");
             }
             .story-chatbox {
                 background-color: #E8EEF5 !important;
-                width: 100%;
-                padding: 20px;
+                width: 90%;
                 border-radius: 2px;
+                padding: 20px;
+                margin: 0 30px;
+            }
+            .story-chatbox-extension {
+                height: 30px;
+                width: 20px;
+                background-color: #E8EEF5 !important;
+                clip-path: polygon(0 0, 0 100%, 100% 0);
+                align-self: flex-start;
+                position: relative;
+                left: 72px;
             }
             .character-image {
-                height: 50px;
-                width: 50px;
-                margin-right: 100%;
-                margin-top: 10px;
+                height: 69px;
+                width: 69px;
+                // margin-right: 100%;
+                align-self: flex-start;
             }
 
             .story-chatbox__text{
@@ -296,6 +299,7 @@ const cardTemplate = document.createElement("template");
                     <div class="story-chatbox">
                         <p class="story-chatbox__text" id="text" class="story-container__text">Default card text</p>
                     </div>
+                    <div class="story-chatbox-extension"></div>
                     <img class="character-image" id="image" src="https://avatars3.githubusercontent.com/u/61460540?s=200&v=4">
                 </div>
                 <div class="option-container"><slot/></div>

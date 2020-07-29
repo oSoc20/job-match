@@ -60,6 +60,6 @@
 <div class="start-container">
     <img class="start-container__logo" src="./images/infrabel.svg" />
     <img class="start-container__picture" src="./images/start-picture.svg" />
-    <p>Thank you for participating. If you want more infromation about infrabel, go to <a  href='https://infrabel.be'>www.infrabel.be</a>.</p>
+    <p>Thank you for participating. If you want more infromation about infrabel, go to <a class="url" href='https://infrabel.be'>www.infrabel.be</a>.</p>
     [[Back to start ->intro-start]]
 </div>

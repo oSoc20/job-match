@@ -1,4 +1,4 @@
-<!-- Vx.7 -->
+<!-- Vx.8 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +19,7 @@ Job-match
     --font-type: 'Roboto';
     --font-size-lg: 18px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap');
 * {
     box-sizing: border-box;
 }
@@ -34,6 +35,31 @@ body {
     position: relative;
 }
 
+ .start-container {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .start-container &gt; * {
+        width: 100%;
+    }
+
+    .start-container p {
+        width: 70%;
+        font-family: var(--font-type);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+
 /* option button */
 a {
     min-width: 172px;
@@ -48,7 +74,7 @@ a {
 
     border: none;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 22px;
 }
@@ -97,10 +123,10 @@ const cardTemplate = document.createElement("template");
             --primary-color-dark: #273951;
             --grey: #E7EEF5;
 
-            --font-type: 'Roboto';
+            --font-type: Montserrat;
             --font-size-lg: 18px;
         }
-        *{
+        * {
             box-sizing: border-box;
         }
         .container {
@@ -162,7 +188,7 @@ const cardTemplate = document.createElement("template");
             max-width: 70%;
             font-family: var(--font-type);
 
-            font-weight: 600;
+            font-weight: 400;
             font-size: 18px;
             line-height: 22px;
             text-align: center;
@@ -206,8 +232,7 @@ const cardTemplate = document.createElement("template");
             console.log("text card");
             this.shadowRoot.appendChild(textTemplate.content.cloneNode(true));
 
-            this.shadowRoot.querySelector("#text").innerHTML =
-                this.getAttribute("text");
+            this.shadowRoot.querySelector("#text").innerHTML = `<p> ${this.getAttribute("text")} </p>`
         }
 
     }
@@ -317,8 +342,7 @@ const cardTemplate = document.createElement("template");
 
             this.shadowRoot.querySelector("#image").src =
                 this.getAttribute("image");
-            this.shadowRoot.querySelector("#text").innerHTML =
-                this.getAttribute("text");
+            this.shadowRoot.querySelector("#text").innerHTML = `<p> ${this.getAttribute("text")} </p>`
         }
     }
 
@@ -400,12 +424,20 @@ const cardTemplate = document.createElement("template");
             return window.story.history[window.story.history.length - 1];
         }
     }
+
+   
+
     window.customElements.define("status-header", StoryStatus);
     window.customElements.define("text-card", TextCard);
     window.customElements.define("image-card", ImageCard);
     window.customElements.define("chat-card", ChatCard);
     window.customElements.define("full-card", FullCard);
-</script><tw-passagedata pid="1" name="Start" tags="" position="">&lt;text-card text='Start game?'&gt;[[I'm ready -&gt;intro-start]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="2" name="Header" tags="" position="">&lt;div class='header'&gt;&lt;div class='progress-bar'&gt;&lt;div class="progress" style="width:&lt;%= window.setup.getStoryProgressInPercentage() %&gt;"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="intro-start" tags="" position="">&lt;image-card image='./images/phone.png'&gt;[[Read message-&gt;message-1]]&lt;/image-card&gt;</tw-passagedata><tw-passagedata pid="4" name="message-1" tags="" position="">&lt;text-card text="&amp;amp;#34;Hi, it's Michael. My car broke down and I have to get to work at infrabel. You have to give me a ride!&amp;amp;#34;"&gt;[[But it’s like four in the morning?-&gt;check-time]]
+</script><tw-passagedata pid="1" name="Start" tags="" position="">&lt;div class="start-container"&gt;
+    &lt;img class="start-container__logo" src="./images/infrabel.svg" /&gt;
+    &lt;img class="start-container__picture" src="./images/start-picture.svg" /&gt;
+    &lt;p&gt;Find out more about Infrabel and it's jobs in this interactive story. &lt;/p&gt;
+    [[Start -&gt;intro-start]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Header" tags="" position="">&lt;div class='header'&gt;&lt;div class='progress-bar'&gt;&lt;div class="progress" style="width:&lt;%= window.setup.getStoryProgressInPercentage() %&gt;"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="intro-start" tags="" position="">&lt;image-card image='./images/phone.png'&gt;[[Read message-&gt;message-1]]&lt;/image-card&gt;</tw-passagedata><tw-passagedata pid="4" name="message-1" tags="" position="">&lt;text-card text="&amp;amp;#34;Hi, it's Michael. My car broke down and I have to get to work at infrabel. You have to give me a ride!&amp;amp;#34;"&gt;[[But it’s like four in the morning?-&gt;check-time]]
 [[Get out of bed-&gt;get-out-of-bed]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="5" name="check-time" tags="" position="">&lt;text-card text='&amp;amp;#34;My team works in shifts! No time for this, you have to come pick me up!&amp;amp;#34;'&gt;[["I'll come and get you"-&gt;get-out-of-bed]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="6" name="get-out-of-bed" tags="" position="">&lt;text-card text='While you get out of bed you let out a sigh and you text him: &amp;amp;#34;I’m on my way&amp;amp;#34;'&gt;[[Get ready to pick up your friend-&gt;check-everything]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="7" name="check-everything" tags="" position="">&lt;text-card text='You’re about to leave. Check if you’ve got everything. Keys. Coffee. Wallet.'&gt;[[Check wallet-&gt;wallet]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="8" name="wallet" tags="" position="">&lt;full-card image='./images/wallet.png' text="Do you have a driver's license?"&gt;[[Yes-&gt;car]]
 [[No-&gt;tandem]]&lt;/full-card&gt;</tw-passagedata><tw-passagedata pid="9" name="tandem" tags="" position="">&lt;% window.story.state.vehicle = "tandem" %&gt;&lt;text-card text='You put your stuff in your pocket and you go to the garage where you find your tandem.'&gt;[[Go get your friend-&gt;loading-tandem]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="10" name="car" tags="" position="">&lt;% window.story.state.vehicle = "car" %&gt;&lt;text-card text='You put your stuff in your pocket and you go to the garage where you find your car.'&gt;[[Go get your friend-&gt;loading-car]]&lt;/text-card&gt;</tw-passagedata><tw-passagedata pid="11" name="loading-tandem" tags="" position="">&lt;image-card image='./images/loading-tandem.png'&gt;[[Arrive at Michael-&gt;car-ride-info]]&lt;/image-card&gt;</tw-passagedata><tw-passagedata pid="12" name="loading-car" tags="" position="">&lt;image-card image='./images/loading-car.png'&gt;[[Arrive at Michael-&gt;car-ride-info]]&lt;/image-card&gt;</tw-passagedata><tw-passagedata pid="13" name="car-ride-info" tags="" position="">&lt;chat-card image='./images/profile-michael.png' text='So I work for Infrabel. We’re responsible for the infrastructure the trains use.'&gt;[[What does that mean exactly?-&gt;infrabel-info-part-1]]
 [[Okay. So where do you want me to drop you off?-&gt;dropoff]]&lt;/chat-card&gt;</tw-passagedata><tw-passagedata pid="14" name="infrabel-info-part-1" tags="" position="">&lt;chat-card image='./images/profile-michael.png' text='That means we build and maintain the rails, the signs, the signing lights, the electricity lines and much more.'&gt;[[What's it like to work there?-&gt;infrabel-info-part-2]]

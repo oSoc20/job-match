@@ -1,0 +1,51 @@
+::Ending-start
+%text-card{ :text => "You haven't found Michael yet but decide to go home and take his gear with you"}
+    [[Go to the exit->Ending-exit]]
+
+::Ending-exit
+%text-card{ :text => "You walk towards the exit but right before you leave you spot Michael in HR's Office."}
+    [[Go to the HR office->Ending-HR]]
+
+::Ending-HR
+%text-card{ :text => "Michael was working for HR all this time. No wonder you couldn't find him at the technical departments."}
+    [[Go to Michael->Ending-question]]
+
+::Ending-question
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => "What are you still doing here?"}
+    [[You forgot your gear. I was looking for you all day and winded up getting a guided tour through Infrabel.->Ending-tour]]
+
+::Ending-tour
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => "How could I be so clumsy to forget the gear for my newest employee! Did you enjoy the guided tour?"}
+    [[Yes->Ending-interested]]
+    [[No->Ending-uninterested]]
+
+
+::Ending-interested
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => ""}
+    [[Yes->Ending-interested]]
+    [[No->Ending-uninterested]]
+
+::Ending-uninterested
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => ""}
+    [[Yes->Ending-interested]]
+    [[No->Ending-uninterested]]
+
+::Ending-vacancies
+%text-card{ :text => "vacancies"}
+    [[Okay->Trainoperator-branches]]
+
+::Ending-share
+%chat-card{ :image => "./images/michael-profile.png", |
+    :text => ""}
+    [[Yes->Ending-interested]]
+    [[No->Ending-uninterested]]
+
+::Ending-see
+
+::Ending-thanks
+
+::Ending-end

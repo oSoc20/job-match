@@ -1,25 +1,25 @@
 ::Trainoperator-start [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "Hi there, my name is Ana and I'm the ambassador of train operators. I will guide you through my department."}
     [[Hello->Trainoperator-explanation]]
 
 ::Trainoperator-explanation [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "The operators of our work trains love large machines and implements. They drive work trains and vehicles that are responsible for maintaining the catenaries and tracks."}
     [[Ok->Trainoperator-explanation-continued]]
 
 ::Trainoperator-explanation-continued [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "In addition, they ensure that their work trains and vehicles are perfectly maintained and, together with their colleagues, they also roll up their sleeves when work has to be done on the tracks or catenaries."}
     [[Okay->Trainoperator-test]]
 
 ::Trainoperator-test [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "Since we need more team players for our department, I would like to test your skills."}
     [[Sure!->Trainoperator-speed-question]]
 
 ::Trainoperator-speed-question [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "A train travels at the speed of 120 kilometers per hour. How far did it travel after 25 minutes?"}
     [[70km->Trainoperator-speed-false]]
     [[60km->Trainoperator-speed-false]]
@@ -27,32 +27,32 @@
     [[40km->Trainoperator-speed-true]]
 
 ::Trainoperator-speed-false [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "I'm afraid that's the wrong answer. Try again"}
     [[Okay->Trainoperator-speed-question]]
 
 ::Trainoperator-speed-correct [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "Good job! Ready for the next question?"}
     [[Yes!->Trainoperator-gear-question]]
 
 ::Trainoperator-gear-question [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "Gear D is moving in clockwise direction. In wich direction is gear 2 moving?"}
     [[Look at the gears->Trainoperator-gear-image]]
 
 ::Trainoperator-gear-image [haml]
-%image-card{ :image => "./images/toolbox.png"}
+%image-card{ :image => "./images/radars.png"}
     [[Counter clockwise->Trainoperator-gear-wrong]]
     [[Clockwise->Trainoperator-gear-true]]
 
 ::Trainoperator-gear-wrong [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "I'm afraid that's the wrong answer. Try again"}
     [[Okay->Trainoperator-gear-question]]
 
 ::Trainoperator-gear-true [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "Well done! You really are talented! There are some open vacancies for this department. Would you like to take a look?"}
     [[Yes->Trainoperator-vacancies]]
     [[No, thanks->Trainoperator-vacancies]]
@@ -62,9 +62,8 @@
     [[Okay->Trainoperator-branches]]
 
 ::Trainoperator-branches [haml]
-%chat-card{ :image => "./images/toolbox.png", |
+%chat-card{ :image => "./images/ana-profile.png", |
     :text => "Would you like to check out the other departments?"}
     [[Yes->change-branch]]
-    %a{:href => "javascript:window.close()"}
-        No thanks
+    [[No thanks->Ending-start]]
 

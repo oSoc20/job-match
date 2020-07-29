@@ -178,7 +178,7 @@
 ::safety-machine-correct [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "Correct!"}
-    [[Thanks!->safety-machine-explanation]]
+    [[Thanks!->safety-walking-question]]
 
 ::safety-machine-explanation [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
@@ -194,12 +194,12 @@
 ::safety-walking-false [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "Attention!"}
-    [[Yes?->safety-machine-explanation]]
+    [[Yes?->safety-walking-explanation]]
 
 ::safety-walking-correct [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "Correct!"}
-    [[Thanks!->safety-machine-explanation]]
+    [[Thanks!->safety-tired-question]]
 
 ::safety-walking-explanation [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
@@ -220,7 +220,7 @@
 ::safety-tired-correct [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |
     :text => "Correct"}
-    [[Thanks!->safety-tired-explanation]]
+    [[Thanks!->ready]]
 
 ::safety-tired-explanation [haml]
 %chat-card{ :image => "./images/safety-manager-profile.png", |

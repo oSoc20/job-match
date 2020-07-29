@@ -13,25 +13,25 @@
     [[Go to Michael->Ending-question]]
 
 ::Ending-question [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "What are you still doing here?"}
     [[You forgot your gear. I was looking for you all day and winded up getting a guided tour through Infrabel.->Ending-tour]]
 
 ::Ending-tour [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "How could I be so clumsy to forget the gear for my newest employee! Did you enjoy the guided tour?"}
     [[Yes->Ending-interested]]
     [[No->Ending-uninterested]]
 
 
 ::Ending-interested [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "I didn't expect you would be interested in our technical jobs. I'm always looking for new employees. Would you like to check out our open vacancies?"}
     [[Yes->Ending-vacancies]]
     [[No->Ending-share]]
 
 ::Ending-uninterested [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "That's okay. But did you know Infrabel has more versatile jobs than we can show you in one guided tour? Would you like to discover these jobs and check out our open vacancies?"}
     [[Yes->Ending-vacancies]]
     [[No->Ending-share]]
@@ -41,20 +41,20 @@
     [[Okay->Ending-see]]
 
 ::Ending-share [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "Okay, no worries! Just know we are always looking for new people. Don't hesitate to share this game with friends who would be interested in technical jobs."}
     [[Share->Ending-share]]
     [[Next->Ending-thanks]]
 
 ::Ending-see [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "Did you see something you like? Don't hesitate to apply for the job! It would be awesome to have you as a colleague."}
     [[Next->Ending-thanks]]
 
 ::Ending-thanks [haml]
-%chat-card{ :image => "./images/michael-profile.png", |
+%chat-card{ :image => "./images/profile-michael.png", |
     :text => "Anyway, thank you for the ride and for delivering my gear! I owe you!"}
-    [[You're welcome! See you soon!-Ending-end]]
+    [[You're welcome! See you soon!->Ending-end]]
 
 ::Ending-end [haml]
-%text-card{ :text => "This is the end of the app, thanks for participating"}
+%text-card{ :text => "This is the end of the app, thanks for participating. If you want more infromation about infrabel, go to www.infrabel.be"}

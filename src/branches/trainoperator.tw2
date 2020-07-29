@@ -37,12 +37,8 @@
     [[Yes!->Trainoperator-gear-question]]
 
 ::Trainoperator-gear-question [haml]
-%chat-card{ :image => "./images/ana-profile.png", |
+%full-card{ :image => "./images/radars.png", |
     :text => "Gear D is moving in clockwise direction. In wich direction is gear 2 moving?"}
-    [[Look at the gears->Trainoperator-gear-image]]
-
-::Trainoperator-gear-image [haml]
-%image-card{ :image => "./images/radars.png"}
     [[Counter clockwise->Trainoperator-gear-wrong]]
     [[Clockwise->Trainoperator-gear-true]]
 

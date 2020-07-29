@@ -136,7 +136,7 @@
             width: 275px;
             height: 370px;
             margin: 30px;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         </style>
@@ -174,7 +174,7 @@
                 background-color: white !important;
             }
             .story-chatbox {
-                background-color: #d0dcff !important;
+                background-color: #E8EEF5 !important;
                 width: 100%;
                 padding: 20px;
                 border-radius: 2px;

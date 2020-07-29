@@ -15,7 +15,7 @@
 
 ::Maintenance-question [haml]
 %chat-card{ :image => "./images/fred-profile.png", |
-    :text => "I just received a report about a defective railway track. Can you see which of these five they are talking about?"}
+    :text => "I just received a report about a defective railway track. Can you see which of these three they are talking about?"}
     [[Ofcourse!->Maintenance-track]]
 
 ::Maintenance-track [haml]
@@ -38,11 +38,13 @@
 %chat-card{ :image => "./images/fred-profile.png", |
     :text => "Sadly, this means the tour is over for maintenance and renewal. There are some open vacancies for this department though. Would you like to take a look?"}
     [[Yes->Maintenance-vacancies]]
-    [[No, thank you->Maintenance-vacancies]]
+    [[No, thank you->Maintenance-branches]]
 
 ::Maintenance-vacancies [haml]
 %chat-card{ :image => "./images/fred-profile.png", |
     :text => "Vacancies links"}
+    [[Explore Infrabel further->Maintenance-branches]]
+    [[End your story->Ending-start]]
 
 ::Maintenance-branches [haml]
 %chat-card{ :image => "./images/fred-profile.png", |

@@ -56,5 +56,10 @@
     :text => "Anyway, thank you for the ride and for delivering my gear! I owe you!"}
     [[You're welcome! See you soon!->Ending-end]]
 
-::Ending-end [haml]
-%text-card{ :text => "This is the end of the app, thanks for participating. If you want more infromation about infrabel, go to <a href='https://infrabel.be'>www.infrabel.be</a>"}
+::Ending-end
+<div class="start-container">
+    <img class="start-container__logo" src="./images/infrabel.svg" />
+    <img class="start-container__picture" src="./images/start-picture.svg" />
+    <p>Thank you for participating. If you want more infromation about infrabel, go to <a  href='https://infrabel.be'>www.infrabel.be</a>.</p>
+    [[Back to start ->intro-start]]
+</div>

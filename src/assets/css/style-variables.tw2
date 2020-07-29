@@ -4,6 +4,6 @@
     --primary-color-dark: #273951;
     --grey: #E7EEF5;
 
-    --font-type: 'Roboto';
+    --font-type: 'Roboto', 'Helvetica';
     --font-size-lg: 18px;
 }
